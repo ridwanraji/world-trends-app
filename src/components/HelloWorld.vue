@@ -9,18 +9,17 @@
           :src="require('../assets/logo.svg')"
           class="my-3"
           contain
-          height="200"
+          height="100"
         ></v-img>
       </v-flex>
 
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+        <h1 class="headline text-uppercase font-weight-bold">
+          WORLD TRENDS
         </h1>
         <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
+          Whats Trending on various socials media around the world.
+          <br>
         </p>
       </v-flex>
 
@@ -28,56 +27,63 @@
         mb-5
         xs12
       >
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+        <h2 class="headline text-uppercase">WHATS TRENDING ON TWITTER?</h2>
 
         <v-layout justify-center>
-          <a
+          <v-card
+            class="mx-auto"
+            color="#26c6da"
+            dark
+            max-width="400"
+
+
             v-for="(next, i) in whatsNext"
             :key="i"
             :href="next.href"
-            class="subheading mx-3"
             target="_blank"
+            
           >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+            <v-card-title>
+              <v-icon
+                large
+                left
+              >
+                mdi-twitter
+              </v-icon>
+              <span class="title font-weight-light">Twitter</span>
+            </v-card-title>
+            
+            <v-card-text class="headline font-weight-bold">
+              {{ next.text }}
+            </v-card-text>
 
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+            <v-card-actions>
+              <v-list-tile class="grow">
+                <v-list-tile-avatar color="grey darken-3">
+                  <v-img
+                    class="elevation-6"
+                    src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                  ></v-img>
+                </v-list-tile-avatar>
 
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+                <v-list-tile-content>
+                  <v-list-tile-title> World Trends </v-list-tile-title>
+                </v-list-tile-content>
 
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
+                <v-layout
+                  align-center
+                  justify-end
+                >
+                
+                <v-icon class="mr-1">mdi-heart</v-icon>
+                <span class="subheading mr-2">256</span>
+                <span class="mr-1">·</span>
+                <v-icon class="mr-1">mdi-share-variant</v-icon>
+                <span class="subheading">45</span>
+                </v-layout>
+              </v-list-tile>
+            </v-card-actions>
+          </v-card>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -87,42 +93,6 @@
 <script>
   export default {
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader'
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify'
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify'
-        }
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com'
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com'
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuetifyjs.com'
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs'
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify'
-        }
-      ],
       whatsNext: [
         {
           text: 'Explore components',
